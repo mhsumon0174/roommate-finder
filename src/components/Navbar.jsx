@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router';
 
-const Navbar = () => {
+const Navbar = ({btn,setBtn}) => {
+    const handleToggle=()=>{
+setBtn(!btn)
+    }
     return (
 
 
-    <div className="  bg-gray-100 shadow-sm sticky top-0 z-100">
-      <div className='navbar  w-11/12 mx-auto'>
+    <div className="   shadow-sm sticky top-0 z-100">
+      <div className='navbar   w-11/12 mx-auto'>
         <div className="navbar-start ">
         <div className="dropdown ">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -47,10 +50,16 @@ const Navbar = () => {
           
         </div>
         </div>
-        <div className='flex gap-4 '>
-
-        <button className='btn'>Login</button>
-        <button className='btn'>SignUp</button>
+        <div className=' flex gap-4 items-center  w-1/4 justify-end'>
+<div onClick={handleToggle}  className='flex gap-1 items-center'>
+    <input 
+  type="checkbox"
+  
+  className="toggle border-black text-black bg-white checked:border-black checked:bg-black checked:text-white"
+/>
+</div>
+        <button className='btn btn-outline btn-accent'>Login</button>
+        <button className='btn btn-outline btn-info'>SignUp</button>
         </div>
       </div>
     </div>
