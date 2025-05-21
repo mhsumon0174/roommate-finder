@@ -4,6 +4,8 @@ import Home from "../components/Home";
 import AddtoFind from "../pages/AddtoFind";
 import BrowseListing from "../pages/BrowseListing";
 import MyListing from "../pages/MyListing";
+import SignUp from "../components/SignUp";
+import Login from "../components/Login";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +28,14 @@ const router = createBrowserRouter([
       {
         path: "/mylisting",
         Component: MyListing,
+      },
+      {
+        path: "/login",
+        Component: Login,
+      },
+      {
+        path: "/signup",
+        Component: SignUp,
       },
       {
         path: "/*",
