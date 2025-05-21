@@ -4,7 +4,7 @@ import { NavLink } from 'react-router';
 const Footer = () => {
     return (
         <div className='w-full'>
-            <footer className="shadow-sm  rounded p-10">
+            <footer className="shadow-2xl  rounded p-10">
   
   <nav className='md:flex justify-around p-4'>
     

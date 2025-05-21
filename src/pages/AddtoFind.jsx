@@ -1,11 +1,152 @@
-import React from 'react';
+import React from "react";
+import Swal from "sweetalert2";
 
 const AddtoFind = () => {
-    return (
-        <div>
-            
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const newUser = Object.fromEntries(formData.entries());
+    console.log(newUser);
+    // send data to db
+    fetch("http://localhost:3000/roommates", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newUser),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Data Added Successfully!",
+            icon: "success",
+            draggable: true,
+            timer:1400
+          });
+        }
+        
+      });
+  };
+  return (
+    <div className="my-20 ">
+      <div>
+        <h1 className="text-3xl font-bold text-center">
+          Add Information To Find An Appropriate Roommate
+        </h1>
+        <p className="mt-4 w-4/5 text-center mx-auto  opacity-65">
+          To connect with the right roommate, please fill in all the details
+          carefully. Include your Title, Location, Rent Amount, Room Type, and
+          your Lifestyle Preferences to help others understand your living
+          style. Write a short Description about the space or what you're
+          looking for. Don’t forget to add your Contact Info, Availability, User
+          Email, and User Name so interested users can reach out easily. The
+          more complete your info, the better your chances of finding a
+          compatible roommate
+        </p>
+      </div>
+      <form onSubmit={handleSubmit}>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 mt-10">
+          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+            <label className="label">Title</label>
+            <input
+              type="text"
+              className="input w-full"
+              name="title"
+              placeholder="Title (ex- Looking for a roommate in NYC)"
+            />
+          </fieldset>
+          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+            <label className="label">Location</label>
+            <input
+              type="text"
+              className="input w-full"
+              name="location"
+              placeholder="Location"
+            />
+          </fieldset>
+          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+            <label className="label">Rent Amount</label>
+            <input
+              type="number"
+              className="input w-full"
+              name="amount"
+              placeholder="Rent Amount"
+            />
+          </fieldset>
+          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+            <label className="label">Room Type</label>
+            <input
+              type="text"
+              className="input w-full"
+              name="roomType"
+              placeholder="Room Type (Single, Shared, etc.)
+"
+            />
+          </fieldset>
+          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+            <label className="label">LifeStyle</label>
+            <input
+              type="text"
+              className="input w-full"
+              name="lifeStyle_Preferences"
+              placeholder="Lifestyle Preferences (Pets, Smoking, Night Owl, etc.)
+"
+            />
+          </fieldset>
+          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+            <label className="label">Description</label>
+            <input
+              type="text"
+              className="input w-full"
+              name="description"
+              placeholder="Description"
+            />
+          </fieldset>
+          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+            <label className="label">Contact Info</label>
+            <input
+              type="text"
+              className="input w-full"
+              name="contact"
+              placeholder="Contact Info"
+            />
+          </fieldset>
+          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+            <label className="label">Availability</label>
+            <input
+              type="text"
+              className="input w-full"
+              name="availability"
+              placeholder="Availability"
+            />
+          </fieldset>
+          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+            <label className="label">Email</label>
+            <input
+              type="email"
+              className="input w-full"
+              name="email"
+              placeholder="Email"
+            />
+          </fieldset>
+          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+            <label className="label">User Name</label>
+            <input
+              type="text"
+              className="input w-full"
+              name="userName"
+              placeholder="User Name"
+            />
+          </fieldset>
         </div>
-    );
+        <div className="my-10">
+          <button className="btn w-full btn-primary text-xl">Add Data</button>
+        </div>
+      </form>
+    </div>
+  );
 };
 
 export default AddtoFind;

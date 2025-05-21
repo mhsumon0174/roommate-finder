@@ -8,7 +8,7 @@ setBtn(!btn)
     return (
 
 
-    <div className="   shadow-sm sticky top-0 z-100">
+    <div className="   shadow-sm ">
       <div className='navbar   w-11/12 mx-auto'>
         <div className="navbar-start ">
         <div className="dropdown ">
@@ -55,7 +55,7 @@ setBtn(!btn)
     <input 
   type="checkbox"
   
-  className="toggle border-black text-black bg-white checked:border-black checked:bg-black checked:text-white"
+  className="toggle border-black text-black bg-white checked:border-white checked:bg-black checked:text-white"
 />
 </div>
         <button className='btn btn-outline btn-accent'>Login</button>
