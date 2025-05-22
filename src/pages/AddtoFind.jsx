@@ -1,7 +1,9 @@
-import React from "react";
+import React, { use } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../contexts/AuthContext";
 
 const AddtoFind = () => {
+  const {user}=use(AuthContext)
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -35,7 +37,7 @@ const AddtoFind = () => {
         <h1 className="text-3xl font-bold text-center">
           Add Information To Find An Appropriate Roommate
         </h1>
-        <p className="mt-4 w-4/5 text-center mx-auto  opacity-65">
+        <p className="mt-4 w-4/5 md:text-center text-justify mx-auto  opacity-65">
           To connect with the right roommate, please fill in all the details
           carefully. Include your Title, Location, Rent Amount, Room Type, and
           your Lifestyle Preferences to help others understand your living
@@ -123,12 +125,34 @@ const AddtoFind = () => {
             />
           </fieldset>
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+            <label className="label">PhotoURL</label>
+            <input
+              type="text"
+              className="input w-full"
+              name="photo"
+              placeholder="Photo URL"
+              readOnly
+              value={user?.photoURL|| ''}
+            />
+          </fieldset>
+          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+            <label className="label">Contact Number</label>
+            <input
+              type="number"
+              className="input w-full"
+              name="contactNumber"
+              placeholder="Contact Number"
+            />
+          </fieldset>
+          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
             <label className="label">Email</label>
             <input
               type="email"
               className="input w-full"
               name="email"
               placeholder="Email"
+    readOnly
+              value={user?.email ||''}
             />
           </fieldset>
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
@@ -138,6 +162,8 @@ const AddtoFind = () => {
               className="input w-full"
               name="userName"
               placeholder="User Name"
+              readOnly
+              value={user?.displayName || ''}
             />
           </fieldset>
         </div>

@@ -6,6 +6,7 @@ import BrowseListing from "../pages/BrowseListing";
 import MyListing from "../pages/MyListing";
 import SignUp from "../components/SignUp";
 import Login from "../components/Login";
+import Error from "../pages/Error";
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/*",
-        element: <h1>Error Page</h1>,
+       Component:Error,
       },
     ],
   },

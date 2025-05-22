@@ -2,16 +2,72 @@ import { use, useState } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import { FcGoogle } from 'react-icons/fc';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+import Swal from 'sweetalert2';
 
 const Login = () => {
+    const navigate = useNavigate();
     const [showPassword,setShowPassword]=useState(false)
     const {signInUser,googleSignIn}=use(AuthContext)
-    const handleGoogleSignIn=()=>{
+    const handleGoogleSignIn=(e)=>{
+        e.preventDefault()
         googleSignIn()
+        .then(result=>{
+            const user=result.user
+          if (user?.email) {
+        Swal.fire({
+          icon: 'success',
+          title: 'You have successfully logged in.',
+          text: 'Login Successful',
+        });
+        navigate('/');
+      }
+         else {
+        throw new Error("Invalid email");
+      }         
+
+                    
+                  
+        })
+        .catch(error => {
+                
+               Swal.fire({
+                         icon: 'error',
+                         title: 'Error',
+                         text: error.message,
+                       });
+              });
+              
     }
     const handleLogin=(e)=>{
 e.preventDefault()
+const email=e.target.email.value;
+        const password=e.target.password.value;
+        signInUser(email,password)
+        .then(result=>{
+          
+          const user=result.user;
+          if(user?.email){
+            navigate('/')
+          Swal.fire({
+                    icon: 'success',
+                    title: 'You have successfully logged in.',
+                    text: 'Login Successful',
+                  });
+          }
+                  
+
+                    
+                  
+        })
+        .catch(error => {
+                
+               Swal.fire({
+                         icon: 'error',
+                         title: 'Error',
+                         text: error.message,
+                       });
+              });
     }
     const handleShowPassword=()=>{
         setShowPassword(!showPassword)
