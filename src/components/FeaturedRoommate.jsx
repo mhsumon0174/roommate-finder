@@ -3,7 +3,7 @@ import FeaturedCard from "./FeaturedCard";
 
 const FeaturedRoommate = () => {
   const [featuredData, setFeaturedData] = useState([]);
-  console.log(featuredData);
+  
 
   useEffect(() => {
     fetch("http://localhost:3000/roommates/featured")

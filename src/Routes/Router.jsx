@@ -7,6 +7,7 @@ import MyListing from "../pages/MyListing";
 import SignUp from "../components/SignUp";
 import Login from "../components/Login";
 import Error from "../pages/Error";
+import RoommatesDetails from "../components/RoommatesDetails";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,12 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         Component: SignUp,
+      },
+     
+      {
+        path:'roommatedetails/:id',
+        loader:({params})=>fetch(`http://localhost:3000/roommates/${params.id}`),
+        Component:RoommatesDetails
       },
       {
         path: "/*",
