@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router';
 import MyPost from '../components/MyPost';
 
 const MyListing = () => {
     const roommates=useLoaderData()
-    console.log(roommates);
+    const [myPost,setMyPost]=useState(roommates)
     
     return (
         <div className='my-20'>
@@ -20,8 +20,8 @@ const MyListing = () => {
             </tr>
           </thead>
           <tbody className=''>
-            {roommates.map((single, index) => (
-              <MyPost key={index} single={single} />
+            {myPost.map((single, index) => (
+              <MyPost key={index} myPost={myPost} setMyPost={setMyPost} single={single} />
             ))}
           </tbody>
         </table>

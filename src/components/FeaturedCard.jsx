@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaUserLarge } from 'react-icons/fa6';
 import { Link } from 'react-router';
 
 const FeaturedCard = ({single}) => {
@@ -11,12 +12,12 @@ const FeaturedCard = ({single}) => {
         <div>
              <div className="card p-4 card-side border shadow-sm">
           <figure>
-            <img
-              src={single.photo}
-              alt="Movie"
-              className='rounded'
-            />
-          </figure>
+  {single?.photo ? (
+    <img src={single.photo} alt="Album" />
+  ) : (
+    <FaUserLarge className="text-5xl text-gray-500" />
+  )}
+</figure>
           <div className="card-body">
             <h2 className="text-2xl font-bold">{single.userName}</h2>
             <p className='text-xl font-semibold'>

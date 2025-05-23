@@ -2,6 +2,7 @@ import React, { use, useEffect, useState } from "react";
 import { useLoaderData } from "react-router";
 import { AuthContext } from "../contexts/AuthContext";
 import Swal from "sweetalert2";
+import { FaUserLarge } from "react-icons/fa6";
 
 const RoommatesDetails = () => {
   const { user } = use(AuthContext);
@@ -10,7 +11,7 @@ const RoommatesDetails = () => {
   const [count, setCount] = useState(0);
 
   const roommate = useLoaderData();
-  console.log(roommate);
+  
   useEffect(() => {
     if (user?.email == roommate.email) {
       setSameUser(true);
@@ -40,8 +41,12 @@ const RoommatesDetails = () => {
         <div>
           <div>
             <figure>
-              <img src={roommate.photo} alt="Album" />
-            </figure>
+  {roommate?.photo ? (
+    <img src={roommate.photo} alt="Album" />
+  ) : (
+    <FaUserLarge className="text-5xl text-gray-500" />
+  )}
+</figure>
           </div>
           <p className="mt-2 text-center ">{roommate.email}</p>
           <div className="card-body">

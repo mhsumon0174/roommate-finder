@@ -10,6 +10,7 @@ import Error from "../pages/Error";
 import RoommatesDetails from "../components/RoommatesDetails";
 import Loading from "../components/Loading";
 import PrivateRoute from "../contexts/PrivateRoute";
+import UpdatePost from "../components/UpdatePost";
 
 const router = createBrowserRouter([
   {
@@ -23,21 +24,30 @@ const router = createBrowserRouter([
       },
       {
         path: "/addtofind",
-        element:<PrivateRoute><AddtoFind></AddtoFind></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <AddtoFind></AddtoFind>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/browseListing",
-        hydrateFallbackElement:<Loading></Loading>,
-        loader:()=>fetch('http://localhost:3000/roommates'),
-       
+        hydrateFallbackElement: <Loading></Loading>,
+        loader: () => fetch("http://localhost:3000/roommates"),
+
         Component: BrowseListing,
       },
       {
         path: "mylisting/:email",
-        hydrateFallbackElement:<Loading></Loading>,
-        loader:({params})=>fetch(`http://localhost:3000/mylisting/${params.email}`),
-       
-       element:<PrivateRoute><MyListing></MyListing></PrivateRoute>
+        hydrateFallbackElement: <Loading></Loading>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/mylisting/${params.email}`),
+
+        element: (
+          <PrivateRoute>
+            <MyListing></MyListing>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
@@ -47,17 +57,29 @@ const router = createBrowserRouter([
         path: "/signup",
         Component: SignUp,
       },
-     
+
       {
-        path:'roommatedetails/:id',
-        hydrateFallbackElement:<Loading></Loading>,
-        loader:({params})=>fetch(`http://localhost:3000/roommates/${params.id}`),
-        element:<PrivateRoute><RoommatesDetails></RoommatesDetails></PrivateRoute>
+        path: "roommatedetails/:id",
+        hydrateFallbackElement: <Loading></Loading>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/roommates/${params.id}`),
+        element: (
+          <PrivateRoute>
+            <RoommatesDetails></RoommatesDetails>
+          </PrivateRoute>
+        ),
       },
-      
+      {
+        path: "roommateedit/:id",
+        hydrateFallbackElement: <Loading></Loading>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/roommates/${params.id}`),
+        Component: UpdatePost,
+      },
+
       {
         path: "/*",
-       Component:Error,
+        Component: Error,
       },
     ],
   },

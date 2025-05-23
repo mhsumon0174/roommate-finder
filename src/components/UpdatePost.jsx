@@ -1,52 +1,43 @@
 import React, { use } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../contexts/AuthContext";
+import { useLoaderData, useNavigate } from "react-router";
 
-const AddtoFind = () => {
-  const {user}=use(AuthContext)
+const UpdatePost = () => {
+  const roommate = useLoaderData();
+const navigate=useNavigate()
+  const { user } = use(AuthContext);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
-    const newUser = Object.fromEntries(formData.entries());
-    console.log(newUser);
-    
-    fetch("http://localhost:3000/roommates", {
-      method: "POST",
+    const updatedUser = Object.fromEntries(formData.entries());
+
+    fetch(`http://localhost:3000/roommates/${roommate._id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(newUser),
+      body: JSON.stringify(updatedUser),
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.insertedId) {
+        if (data.modifiedCount) {
           Swal.fire({
-            title: "Data Added Successfully!",
+            title: "Data Updated Successfully!",
             icon: "success",
             draggable: true,
-            timer:1400
+            timer: 1400,
           });
+navigate(`/mylisting/${user?.email}`)
         }
-        
       });
   };
   return (
     <div className="my-20 ">
       <div>
-        <h1 className="text-3xl font-bold text-center">
-          Add Information To Find An Appropriate Roommate
-        </h1>
-        <p className="mt-4 w-4/5 md:text-center text-justify mx-auto  opacity-65">
-          To connect with the right roommate, please fill in all the details
-          carefully. Include your Title, Location, Rent Amount, Room Type, and
-          your Lifestyle Preferences to help others understand your living
-          style. Write a short Description about the space or what you're
-          looking for. Don’t forget to add your Contact Info, Availability, User
-          Email, and User Name so interested users can reach out easily. The
-          more complete your info, the better your chances of finding a
-          compatible roommate
-        </p>
+        <h1 className="text-3xl font-bold text-center">Edit Information</h1>
       </div>
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 mt-10">
@@ -57,6 +48,7 @@ const AddtoFind = () => {
               className="input w-full"
               name="title"
               placeholder="Title (ex- Looking for a roommate in NYC)"
+              defaultValue={roommate?.title}
             />
           </fieldset>
           <fieldset className="  border-base-300 rounded-box  border p-4">
@@ -66,6 +58,7 @@ const AddtoFind = () => {
               className="input w-full"
               name="location"
               placeholder="Location"
+              defaultValue={roommate?.location}
             />
           </fieldset>
           <fieldset className="  border-base-300 rounded-box  border p-4">
@@ -75,6 +68,7 @@ const AddtoFind = () => {
               className="input w-full"
               name="amount"
               placeholder="Rent Amount"
+              defaultValue={roommate?.amount}
             />
           </fieldset>
           <fieldset className="  border-base-300 rounded-box  border p-4">
@@ -83,8 +77,8 @@ const AddtoFind = () => {
               type="text"
               className="input w-full"
               name="roomType"
-              placeholder="Room Type (Single, Shared, etc.)
-"
+              placeholder="Room Type (Single, Shared, etc.)"
+              defaultValue={roommate?.roomType}
             />
           </fieldset>
           <fieldset className="  border-base-300 rounded-box  border p-4">
@@ -93,8 +87,8 @@ const AddtoFind = () => {
               type="text"
               className="input w-full"
               name="lifeStyle_Preferences"
-              placeholder="Lifestyle Preferences (Pets, Smoking, Night Owl, etc.)
-"
+              placeholder="Lifestyle Preferences (Pets, Smoking, Night Owl, etc.)"
+              defaultValue={roommate?.lifeStyle_Preferences}
             />
           </fieldset>
           <fieldset className="  border-base-300 rounded-box  border p-4">
@@ -104,6 +98,7 @@ const AddtoFind = () => {
               className="input w-full"
               name="description"
               placeholder="Description"
+              defaultValue={roommate?.description}
             />
           </fieldset>
           <fieldset className="  border-base-300 rounded-box  border p-4">
@@ -113,6 +108,7 @@ const AddtoFind = () => {
               className="input w-full"
               name="contact"
               placeholder="Contact Info"
+              defaultValue={roommate?.contact}
             />
           </fieldset>
           <fieldset className="  border-base-300 rounded-box  border p-4">
@@ -122,6 +118,7 @@ const AddtoFind = () => {
               className="input w-full"
               name="availability"
               placeholder="Availability"
+              defaultValue={roommate?.availability}
             />
           </fieldset>
           <fieldset className="  border-base-300 rounded-box  border p-4">
@@ -131,8 +128,7 @@ const AddtoFind = () => {
               className="input w-full"
               name="photo"
               placeholder="Photo URL"
-              readOnly
-              value={user?.photoURL|| ''}
+              defaultValue={roommate?.photoURL}
             />
           </fieldset>
           <fieldset className="  border-base-300 rounded-box  border p-4">
@@ -142,6 +138,7 @@ const AddtoFind = () => {
               className="input w-full"
               name="contactNumber"
               placeholder="Contact Number"
+              defaultValue={roommate?.contactNumber}
             />
           </fieldset>
           <fieldset className="  border-base-300 rounded-box  border p-4">
@@ -151,8 +148,8 @@ const AddtoFind = () => {
               className="input w-full"
               name="email"
               placeholder="Email"
-    readOnly
-              value={user?.email ||''}
+              readOnly
+              value={user?.email || ""}
             />
           </fieldset>
           <fieldset className="  border-base-300 rounded-box  border p-4">
@@ -163,16 +160,16 @@ const AddtoFind = () => {
               name="userName"
               placeholder="User Name"
               readOnly
-              value={user?.displayName || ''}
+              value={user?.displayName || ""}
             />
           </fieldset>
         </div>
         <div className="my-10">
-          <button className="btn w-full btn-primary text-xl">Add Data</button>
+          <button onClick={()=>{window.scrollTo(0,0)}} className="btn w-full btn-primary text-xl">Update</button>
         </div>
       </form>
     </div>
   );
 };
 
-export default AddtoFind;
+export default UpdatePost;

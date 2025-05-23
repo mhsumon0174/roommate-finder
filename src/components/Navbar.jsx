@@ -69,10 +69,9 @@ const Navbar = ({ btn, setBtn }) => {
             </ul>
           </div>
           <div className="flex md:gap-3  md:items-start  ">
-            <img className="w-10 hidden md:flex" src="/logo.png" alt="" />
+            <img className="w-10 hidden md:flex" src="/logo.png"  />
             <p className="w-[180px]">
               <Link to="/" className="md:text-2xl font-bold">
-                {" "}
                 My Roomie
               </Link>
             </p>
@@ -107,14 +106,14 @@ const Navbar = ({ btn, setBtn }) => {
           </div>
           {user ? (
             <div className="flex items-center gap-3">
-              {user.photoURL ? (
+              {user.photoURL ? 
                 <img
                   data-tooltip-id="my-tooltip"
                   data-tooltip-content={user.displayName}
                   className="rounded-full w-10"
                   src={user.photoURL}
                 ></img>
-              ) : (
+               : 
                 <div>
                   <FaUserCircle
                     data-tooltip-id="my-tooltip2"
@@ -122,7 +121,7 @@ const Navbar = ({ btn, setBtn }) => {
                     className="text-3xl"
                   />
                 </div>
-              )}
+              }
               <Tooltip id="my-tooltip" />
               <Tooltip id="my-tooltip2" />
               <Link to="/login">
