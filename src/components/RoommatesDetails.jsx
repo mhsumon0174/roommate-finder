@@ -33,7 +33,7 @@ const RoommatesDetails = () => {
   };
 
   return (
-    <div>
+    <div className="p-10 my-30 rounded-lg text-blue-900 bg-blue-50">
       <h1 className="text-3xl font-bold text-center mt-20 mb-5 bg-amber-300 w-fit mx-auto px-5 p-3 rounded-2xl">
         {count} People Interested In
       </h1>

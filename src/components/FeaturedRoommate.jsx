@@ -16,11 +16,15 @@ const FeaturedRoommate = () => {
   }, []);
   return (
     <div>
-      <h1 className="text-4xl font-bold text-center">Featured Roommates </h1>
-      <div className="my-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      
+      <div className="my-20 text-blue-900 bg-blue-50 p-10 rounded-lg">
+        <h1 className="text-4xl font-bold text-center my-10">Featured Roommates </h1>
+        <div className="  rounded-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+       
        {
         featuredData.map((single,index)=><FeaturedCard single={single} key={index}></FeaturedCard>)
        }
+      </div>
       </div>
     </div>
   );

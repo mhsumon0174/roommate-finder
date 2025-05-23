@@ -16,7 +16,7 @@ const BrowseListing = () => {
         All Available Post For You
       </h1>
 
-      <div className="flex w-11/12 mx-auto ">
+      <div className="flex w-11/12 mx-auto p-10 rounded-lg text-blue-900 bg-blue-50">
         <table className="w-full text-center border shadow-md rounded-lg">
           <thead className="bg-gray-100  text-gray-700 h-10 ">
             <tr className='border h-15'>

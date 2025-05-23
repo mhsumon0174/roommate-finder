@@ -35,7 +35,7 @@ navigate(`/mylisting/${user?.email}`)
       });
   };
   return (
-    <div className="my-20 ">
+    <div className="my-20 rounded-lg text-blue-900 bg-blue-50 p-10 ">
       <div>
         <h1 className="text-3xl font-bold text-center">Edit Information</h1>
       </div>

@@ -7,7 +7,7 @@ const MyListing = () => {
     const [myPost,setMyPost]=useState(roommates)
     
     return (
-        <div className='my-20'>
+        <div className='my-20 p-10 rounded-lg text-blue-900 bg-blue-50'>
             <div className='w-11/12 mx-auto '>
                <table className="w-full text-center border shadow-md rounded-lg">
           <thead className="bg-gray-100  text-gray-700 h-10 ">

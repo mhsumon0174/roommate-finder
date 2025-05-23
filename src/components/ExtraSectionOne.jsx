@@ -12,7 +12,7 @@ const ExtraSectionOne = () => {
         Stay safe and build trust with your future roommate by following these tips.
       </p>
 
-      <div className="flex flex-col-reverse lg:flex-row gap-10">
+      <div className="flex flex-col-reverse lg:flex-row gap-10 w-full ">
         <div className="flex-1 space-y-6 text-gray-800 text-lg">
           <div className="flex flex-col md:flex-row md:items-start gap-2">
             <h1 className="font-semibold min-w-[200px]">No early payments:</h1>

@@ -32,7 +32,7 @@ const AddtoFind = () => {
       });
   };
   return (
-    <div className="my-20 ">
+    <div className="my-20 p-10 rounded-lg text-blue-900 bg-blue-50">
       <div>
         <h1 className="text-3xl font-bold text-center">
           Add Information To Find An Appropriate Roommate
