@@ -6,6 +6,7 @@ import Loading from './Loading';
 import MySlider from './MySlider';
 import ExtraSectionOne from './ExtraSectionOne';
 import ExtraSectionTwo from './ExtraSectionTwo';
+import MyTypeWriter from './MyTypeWriter';
 
 const Home = () => {
   const {loading}=use(AuthContext)
@@ -15,6 +16,7 @@ const Home = () => {
     return (
         <div>
             <MySlider></MySlider>
+            <MyTypeWriter></MyTypeWriter>
             <FeaturedRoommate></FeaturedRoommate>
             <ExtraSectionOne></ExtraSectionOne>
             <ExtraSectionTwo></ExtraSectionTwo>
