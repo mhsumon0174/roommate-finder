@@ -52,7 +52,7 @@ const router = createBrowserRouter([
         path:'roommatedetails/:id',
         hydrateFallbackElement:<Loading></Loading>,
         loader:({params})=>fetch(`http://localhost:3000/roommates/${params.id}`),
-        Component:RoommatesDetails
+        element:<PrivateRoute><RoommatesDetails></RoommatesDetails></PrivateRoute>
       },
       
       {
