@@ -69,7 +69,8 @@ const email=e.target.email.value;
                        });
               });
     }
-    const handleShowPassword=()=>{
+    const handleShowPassword=(e)=>{
+      e.preventDefault()
         setShowPassword(!showPassword)
     }
     return (

@@ -50,7 +50,7 @@ const AddtoFind = () => {
       </div>
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 mt-10">
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+          <fieldset className="  border-base-300 rounded-box  border p-4">
             <label className="label">Title</label>
             <input
               type="text"
@@ -59,7 +59,7 @@ const AddtoFind = () => {
               placeholder="Title (ex- Looking for a roommate in NYC)"
             />
           </fieldset>
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+          <fieldset className="  border-base-300 rounded-box  border p-4">
             <label className="label">Location</label>
             <input
               type="text"
@@ -68,7 +68,7 @@ const AddtoFind = () => {
               placeholder="Location"
             />
           </fieldset>
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+          <fieldset className="  border-base-300 rounded-box  border p-4">
             <label className="label">Rent Amount</label>
             <input
               type="number"
@@ -77,7 +77,7 @@ const AddtoFind = () => {
               placeholder="Rent Amount"
             />
           </fieldset>
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+          <fieldset className="  border-base-300 rounded-box  border p-4">
             <label className="label">Room Type</label>
             <input
               type="text"
@@ -87,7 +87,7 @@ const AddtoFind = () => {
 "
             />
           </fieldset>
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+          <fieldset className="  border-base-300 rounded-box  border p-4">
             <label className="label">LifeStyle</label>
             <input
               type="text"
@@ -97,7 +97,7 @@ const AddtoFind = () => {
 "
             />
           </fieldset>
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+          <fieldset className="  border-base-300 rounded-box  border p-4">
             <label className="label">Description</label>
             <input
               type="text"
@@ -106,7 +106,7 @@ const AddtoFind = () => {
               placeholder="Description"
             />
           </fieldset>
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+          <fieldset className="  border-base-300 rounded-box  border p-4">
             <label className="label">Contact Info</label>
             <input
               type="text"
@@ -115,7 +115,7 @@ const AddtoFind = () => {
               placeholder="Contact Info"
             />
           </fieldset>
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+          <fieldset className="  border-base-300 rounded-box  border p-4">
             <label className="label">Availability</label>
             <input
               type="text"
@@ -124,7 +124,7 @@ const AddtoFind = () => {
               placeholder="Availability"
             />
           </fieldset>
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+          <fieldset className="  border-base-300 rounded-box  border p-4">
             <label className="label">PhotoURL</label>
             <input
               type="text"
@@ -135,7 +135,7 @@ const AddtoFind = () => {
               value={user?.photoURL|| ''}
             />
           </fieldset>
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+          <fieldset className="  border-base-300 rounded-box  border p-4">
             <label className="label">Contact Number</label>
             <input
               type="number"
@@ -144,7 +144,7 @@ const AddtoFind = () => {
               placeholder="Contact Number"
             />
           </fieldset>
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+          <fieldset className="  border-base-300 rounded-box  border p-4">
             <label className="label">Email</label>
             <input
               type="email"
@@ -155,7 +155,7 @@ const AddtoFind = () => {
               value={user?.email ||''}
             />
           </fieldset>
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+          <fieldset className="  border-base-300 rounded-box  border p-4">
             <label className="label">User Name</label>
             <input
               type="text"

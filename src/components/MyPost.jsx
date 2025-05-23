@@ -1,9 +1,12 @@
 import React, { use } from 'react';
+import { FaEye } from 'react-icons/fa';
+import { FiEdit } from 'react-icons/fi';
+import { MdDelete, MdOutlinePreview } from 'react-icons/md';
 import { Link } from 'react-router';
 
 
 
-const AllRoommate = ({ single }) => {
+const MyPost = ({ single }) => {
  
 
 
@@ -23,18 +26,37 @@ const AllRoommate = ({ single }) => {
       <td className="font-semibold border">{single.userName}</td>
       <td className="font-semibold border">{single.amount}</td>
       <td className="font-semibold border">{single.roomType}</td>
-      <td>
+      <td className='flex flex-col gap-2 my-2'>
         <Link to={`/roommatedetails/${single._id}`}>
           <button
             onClick={() => handleSeeMore(single._id)}
             className="btn btn-sm btn-outline btn-info "
           >
-            See More
+          <FaEye />
           </button>
+          
+        </Link>
+        <Link to={`/roommatedetails/${single._id}`}>
+          <button
+            onClick={() => handleSeeMore(single._id)}
+            className="btn btn-sm btn-outline btn-info "
+          >
+            <FiEdit />
+          </button>
+          
+        </Link>
+        <Link to={`/roommatedetails/${single._id}`}>
+          <button
+            onClick={() => handleSeeMore(single._id)}
+            className="btn btn-sm btn-outline btn-info "
+          >
+           <MdDelete />
+          </button>
+          
         </Link>
       </td>
     </tr>
   );
 };
 
-export default AllRoommate;
+export default MyPost;

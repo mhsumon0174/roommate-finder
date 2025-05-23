@@ -33,7 +33,10 @@ const router = createBrowserRouter([
         Component: BrowseListing,
       },
       {
-        path: "/mylisting",
+        path: "mylisting/:email",
+        hydrateFallbackElement:<Loading></Loading>,
+        loader:({params})=>fetch(`http://localhost:3000/mylisting/${params.email}`),
+       
        element:<PrivateRoute><MyListing></MyListing></PrivateRoute>
       },
       {

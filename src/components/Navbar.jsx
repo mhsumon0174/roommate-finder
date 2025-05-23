@@ -6,6 +6,10 @@ import { Tooltip } from "react-tooltip";
 import Swal from 'sweetalert2';
 const Navbar = ({ btn, setBtn }) => {
   const { user, logOut } = use(AuthContext);
+  const handleMyListing=(email)=>{
+    console.log(email);
+    
+  }
   const handleLogout = () => {
     logOut()
     
@@ -60,7 +64,7 @@ const Navbar = ({ btn, setBtn }) => {
                 <NavLink to="/browselisting">Browse Listing</NavLink>
               </li>
               <li>
-                <NavLink to="/mylisting">My Listing</NavLink>
+                <NavLink to={`/mylisting/${user?.email}`} >My Listing</NavLink>
               </li>
             </ul>
           </div>
@@ -89,7 +93,7 @@ const Navbar = ({ btn, setBtn }) => {
               <NavLink to="/browselisting">Browse Listing</NavLink>
             </li>
             <li>
-              <NavLink to="/mylisting">My Listing</NavLink>
+              <NavLink to={`/mylisting/${user?.email}`} >My Listing</NavLink>
             </li>
           </ul>
         </div>
