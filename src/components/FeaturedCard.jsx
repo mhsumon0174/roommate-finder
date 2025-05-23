@@ -20,7 +20,7 @@ const FeaturedCard = ({single}) => {
           <div className="card-body">
             <h2 className="text-2xl font-bold">{single.userName}</h2>
             <p className='text-xl font-semibold'>
-                Amount Limit: {single.amount}
+                Rent Limit: {single.amount}
             </p>
             <p className='text-lg '>
                 Room Type: {single.roomType}

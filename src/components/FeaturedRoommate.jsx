@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import FeaturedCard from "./FeaturedCard";
+import { AuthContext } from "../contexts/AuthContext";
 
 const FeaturedRoommate = () => {
+  
   const [featuredData, setFeaturedData] = useState([]);
   
 

@@ -8,6 +8,8 @@ import SignUp from "../components/SignUp";
 import Login from "../components/Login";
 import Error from "../pages/Error";
 import RoommatesDetails from "../components/RoommatesDetails";
+import Loading from "../components/Loading";
+import PrivateRoute from "../contexts/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -21,15 +23,18 @@ const router = createBrowserRouter([
       },
       {
         path: "/addtofind",
-        Component: AddtoFind,
+        element:<PrivateRoute><AddtoFind></AddtoFind></PrivateRoute>,
       },
       {
         path: "/browseListing",
+        hydrateFallbackElement:<Loading></Loading>,
+        loader:()=>fetch('http://localhost:3000/roommates'),
+       
         Component: BrowseListing,
       },
       {
         path: "/mylisting",
-        Component: MyListing,
+       element:<PrivateRoute><MyListing></MyListing></PrivateRoute>
       },
       {
         path: "/login",
@@ -42,9 +47,11 @@ const router = createBrowserRouter([
      
       {
         path:'roommatedetails/:id',
+        hydrateFallbackElement:<Loading></Loading>,
         loader:({params})=>fetch(`http://localhost:3000/roommates/${params.id}`),
         Component:RoommatesDetails
       },
+      
       {
         path: "/*",
        Component:Error,
