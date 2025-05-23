@@ -48,7 +48,7 @@ const MyPost = ({ single,myPost,setMyPost }) => {
       <td className="border">
         <figure>
           {single?.photo ? (
-            <img src={single.photo} alt="Album" />
+            <img src={single.photo} alt="Album" className="w-[120px] h-[100px] p-1 mx-auto"  />
           ) : (
             <FaUserLarge className="text-5xl mx-auto" />
           )}
