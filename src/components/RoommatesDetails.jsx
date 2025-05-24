@@ -63,7 +63,7 @@ const [count, setCount] = useState(roommate.like || 0);
             <div>
               <figure>
                 {roommate?.photo ? (
-                  <img src={roommate.photo} alt="Album" />
+                  <img src={roommate.photo} className="w-[150px] h-[150px]" alt="Album" />
                 ) : (
                   <FaUserLarge className="text-5xl text-gray-500" />
                 )}

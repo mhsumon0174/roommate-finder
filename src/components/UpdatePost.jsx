@@ -128,7 +128,7 @@ navigate(`/mylisting/${user?.email}`)
               className="input w-full"
               name="photo"
               placeholder="Photo URL"
-              defaultValue={roommate?.photoURL}
+              defaultValue={roommate?.photo}
             />
           </fieldset>
           <fieldset className="  border-base-300 rounded-box  border p-4">
