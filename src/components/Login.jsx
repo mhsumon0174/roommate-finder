@@ -76,7 +76,7 @@ const email=e.target.email.value;
     return (
         <div className='my-20 h-full  flex justify-center items-center'>
           
-            <div className="card border bg-gray-500 w-full max-w-sm shrink-0 shadow-2xl">
+            <div className="card border bg-blue-50 text-blue-900 w-full max-w-sm shrink-0 shadow-2xl">
       <div className="card-body">
         <form onSubmit={handleLogin} className="fieldset">
             <h1 className='text-center text-3xl font-bold'>Log In Now</h1>

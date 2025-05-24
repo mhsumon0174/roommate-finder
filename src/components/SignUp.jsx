@@ -80,7 +80,7 @@ const SignUp = () => {
   return (
     <div>
       <div className="my-10 flex justify-center  items-center">
-        <div className="card border bg-gray-500 w-full max-w-sm shrink-0 shadow-2xl">
+        <div className="card border bg-blue-50 text-blue-900 w-full max-w-sm shrink-0 shadow-2xl">
           <div className="card-body">
             <form onSubmit={handleSignUp} className="fieldset">
               <h1 className="text-center text-3xl font-bold">Sign Up</h1>
