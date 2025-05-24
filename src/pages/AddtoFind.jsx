@@ -11,7 +11,7 @@ const AddtoFind = () => {
     const newUser = Object.fromEntries(formData.entries());
     console.log(newUser);
     
-    fetch("http://localhost:3000/roommates", {
+    fetch("https://assignment-10-server-theta-three.vercel.app/roommates", {
       method: "POST",
       headers: {
         "content-type": "application/json",

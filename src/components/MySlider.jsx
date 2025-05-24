@@ -11,13 +11,13 @@ const MySlider = () => {
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-center">
           <div className='z-1'>
-            <h2 className="text-white text-4xl font-bold mb-2">Find Your Perfect Roommate</h2>
-            <p className="text-white text-lg">Easily connect with people looking for roommates near your location.</p>
+            <h2 className="text-white text-3xl md:text-4xl font-bold mb-2">Find Your Perfect Roommate</h2>
+            <p className="text-white md:text-lg ">Easily connect with people looking for roommates near your location.</p>
           </div>
         </div>
-        <div className="absolute left-5 right-5 top-1/2 transform -translate-y-1/2 flex justify-between">
-          <a href="#slide3" className="btn btn-circle">❮</a>
-          <a href="#slide2" className="btn btn-circle">❯</a>
+        <div className="absolute md:left-5 md:right-5 left-2 right-2 z-1 md:top-1/2 top-4/5  transform -translate-y-1/2 flex justify-between ">
+          <a href="#slide3" className="btn btn-circle text-2xl">❮</a>
+          <a href="#slide2" className="btn btn-circle text-2xl">❯</a>
         </div>
       </div>
 
@@ -28,13 +28,13 @@ const MySlider = () => {
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-center">
           <div className='z-1'>
-            <h2 className="text-white text-4xl font-bold mb-2">Post Ads for Free</h2>
-            <p className="text-white text-lg">List your empty room or search for one without any cost.</p>
+            <h2 className="text-white text-3xl md:text-4xl font-bold mb-2">Post Ads for Free</h2>
+            <p className="text-white md:text-lg">List your empty room or search for one without any cost.</p>
           </div>
         </div>
-        <div className="absolute left-5 right-5 top-1/2 transform -translate-y-1/2 flex justify-between">
-          <a href="#slide1" className="btn btn-circle">❮</a>
-          <a href="#slide3" className="btn btn-circle">❯</a>
+        <div className="absolute md:left-5 md:right-5 left-2 right-2 z-1 md:top-1/2 top-4/5  transform -translate-y-1/2 flex justify-between">
+          <a href="#slide1" className="btn btn-circle text-2xl">❮</a>
+          <a href="#slide3" className="btn btn-circle text-2xl">❯</a>
         </div>
       </div>
 
@@ -45,13 +45,13 @@ const MySlider = () => {
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-center">
           <div className='z-1'>
-            <h2 className="text-white text-4xl font-bold mb-2">Safe & Trusted Community</h2>
-            <p className="text-white text-lg">Connect with verified users and enjoy secure roommate finding experience.</p>
+            <h2 className="text-white text-3xl md:text-4xl font-bold mb-2">Safe & Trusted Community</h2>
+            <p className="text-white md:text-lg">Connect with verified users and enjoy secure roommate finding experience.</p>
           </div>
         </div>
-        <div className="absolute left-5 right-5 top-1/2 transform -translate-y-1/2 flex justify-between">
-          <a href="#slide2" className="btn btn-circle">❮</a>
-          <a href="#slide1" className="btn btn-circle">❯</a>
+        <div className="absolute md:left-5 md:right-5 left-2 right-2 z-1 md:top-1/2 top-4/5  transform -translate-y-1/2 flex justify-between">
+          <a href="#slide2" className="btn btn-circle text-2xl">❮</a>
+          <a href="#slide1" className="btn btn-circle text-2xl">❯</a>
         </div>
       </div>
     </div>

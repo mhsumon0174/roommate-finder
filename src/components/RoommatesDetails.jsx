@@ -33,11 +33,12 @@ const RoommatesDetails = () => {
   };
 
   return (
-    <div className="p-10 my-30 rounded-lg text-blue-900 bg-blue-50">
-      <h1 className="text-3xl font-bold text-center mt-20 mb-5 bg-amber-300 w-fit mx-auto px-5 p-3 rounded-2xl">
+    <div className="mt-10 pt-5  mb-20 rounded-lg text-blue-900 bg-blue-50">
+      <h1 className="text-3xl font-bold text-center p mb-5 bg-amber-300 w-fit mx-auto px-5 p-3 rounded-2xl">
         {count} People Interested In
       </h1>
-      <div className="card mb-20 p-5 flex items-center w-8/11 mx-auto  border shadow-sm">
+      <div className="p-3">
+        <div className="card mb-20  flex items-center  shadow-sm">
         <div>
           <div>
             <figure>
@@ -78,10 +79,10 @@ const RoommatesDetails = () => {
               <button onClick={handleLike} className="btn btn-outline btn-info">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  fill={showNumber ? "red" : ""}
+                 fill={sameUser ? "black" : showNumber ? "red" : ""}
                   viewBox="0 0 24 24"
                   strokeWidth="2.5"
-                  stroke="red"
+                  stroke=""
                   className="size-[1.2em]"
                 >
                   <path
@@ -103,6 +104,7 @@ const RoommatesDetails = () => {
             </p>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

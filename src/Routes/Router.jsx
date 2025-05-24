@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       {
         path: "/browseListing",
         hydrateFallbackElement: <Loading></Loading>,
-        loader: () => fetch("http://localhost:3000/roommates"),
+        loader: () => fetch("https://assignment-10-server-theta-three.vercel.app/roommates"),
 
         Component: BrowseListing,
       },
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
         path: "mylisting/:email",
         hydrateFallbackElement: <Loading></Loading>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/mylisting/${params.email}`),
+          fetch(`https://assignment-10-server-theta-three.vercel.app/mylisting/${params.email}`),
 
         element: (
           <PrivateRoute>
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
         path: "roommatedetails/:id",
         hydrateFallbackElement: <Loading></Loading>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/roommates/${params.id}`),
+          fetch(`https://assignment-10-server-theta-three.vercel.app/roommates/${params.id}`),
         element: (
           <PrivateRoute>
             <RoommatesDetails></RoommatesDetails>
@@ -73,7 +73,7 @@ const router = createBrowserRouter([
         path: "roommateedit/:id",
         hydrateFallbackElement: <Loading></Loading>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/roommates/${params.id}`),
+          fetch(`https://assignment-10-server-theta-three.vercel.app/roommates/${params.id}`),
         Component: UpdatePost,
       },
 

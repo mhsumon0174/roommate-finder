@@ -8,7 +8,7 @@ const FeaturedRoommate = () => {
   
 
   useEffect(() => {
-    fetch("http://localhost:3000/roommates/featured")
+    fetch("https://assignment-10-server-theta-three.vercel.app/roommates/featured")
       .then((res) => res.json())
       .then((data) => {
         setFeaturedData(data);

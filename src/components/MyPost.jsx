@@ -19,7 +19,7 @@ const MyPost = ({ single,myPost,setMyPost }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/roommates/${_id}`, {
+        fetch(`https://assignment-10-server-theta-three.vercel.app/roommates/${_id}`, {
           method: "DELETE",
           headers: {
             "content-type": "application/json",
@@ -48,7 +48,7 @@ const MyPost = ({ single,myPost,setMyPost }) => {
       <td className="border">
         <figure>
           {single?.photo ? (
-            <img src={single.photo} alt="Album" className="w-[120px] h-[100px] p-1 mx-auto"  />
+            <img src={single.photo} alt="Album" className="w-[120px] h-[80px] md:w-[150px] md:h-[130px] p-1 mx-auto"  />
           ) : (
             <FaUserLarge className="text-5xl mx-auto" />
           )}

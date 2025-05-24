@@ -11,13 +11,13 @@ const BrowseListing = () => {
 }
 
   return (
-    <div className="my-20">
-      <h1 className="font-bold text-3xl text-center mb-10">
+    <div className="my-15 text-blue-900 bg-blue-50 rounded-2xl">
+      <h1 className="font-bold md:text-3xl text-2xl text-center  p-5 ">
         All Available Post For You
       </h1>
 
-      <div className="flex w-11/12 mx-auto p-10 rounded-lg text-blue-900 bg-blue-50">
-        <table className="w-full text-center border shadow-md rounded-lg">
+      <div className="flex   p-4 md:p-10 rounded-lg ">
+        <table className="w-full   text-center  shadow-md rounded-lg">
           <thead className="bg-gray-100  text-gray-700 h-10 ">
             <tr className='border h-15'>
               <th className='border'>Photo</th>

@@ -25,7 +25,7 @@ setStyle(black)
     return (
         <div style={style}>
             <Navbar btn={btn} setBtn={setBtn}></Navbar>
-            <div className='min-h-[550px] w-11/12 mx-auto'>
+            <div className='min-h-[550px] w-19/20 mx-auto'>
                 <Outlet></Outlet>
             </div>
             <Footer></Footer>

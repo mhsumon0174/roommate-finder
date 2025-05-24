@@ -4,11 +4,11 @@ import { AiFillSafetyCertificate } from "react-icons/ai";
 const ExtraSectionOne = () => {
   return (
     <div className="bg-blue-50 py-10 px-6 md:px-16 rounded-lg shadow-md my-12">
-      <h2 className="text-3xl flex justify-center items-center gap-3 font-bold text-center text-blue-900 mb-4">
+      <h2 className=" md:text-3xl text-xl flex md:justify-center  items-center md:gap-3 font-bold text-center text-blue-900 mb-4">
         <AiFillSafetyCertificate />
         Safety Tips for Roommates
       </h2>
-      <p className="text-center text-gray-700 mb-8">
+      <p className="text-center opacity-70 text-gray-700 mb-8">
         Stay safe and build trust with your future roommate by following these tips.
       </p>
 

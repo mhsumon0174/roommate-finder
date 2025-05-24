@@ -14,7 +14,7 @@ const navigate=useNavigate()
     const formData = new FormData(form);
     const updatedUser = Object.fromEntries(formData.entries());
 
-    fetch(`http://localhost:3000/roommates/${roommate._id}`, {
+    fetch(`https://assignment-10-server-theta-three.vercel.app/roommates/${roommate._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
