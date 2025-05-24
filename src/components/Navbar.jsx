@@ -104,12 +104,13 @@ const Navbar = ({ btn, setBtn }) => {
               )}
               <Tooltip id="my-tooltip" />
               <Tooltip id="my-tooltip2" />
+              <Link to='/login'>
               <button
                 onClick={handleLogout}
                 className="btn btn-outline btn-sm sm:btn-md btn-accent"
               >
                 LogOut
-              </button>
+              </button></Link>
             </div>
           ) : (
             <div className="flex items-center gap-2">
