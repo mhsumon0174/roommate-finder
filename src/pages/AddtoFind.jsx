@@ -11,7 +11,9 @@ const AddtoFind = () => {
     const form = e.target;
     const formData = new FormData(form);
     const newUser = Object.fromEntries(formData.entries());
-    console.log(newUser);
+    if (newUser.availability) {
+    newUser.availability = newUser.availability.toLowerCase();
+  }
     
     fetch("https://assignment-10-server-theta-three.vercel.app/roommates", {
       method: "POST",
@@ -122,6 +124,7 @@ navigate('/browselisting');
             <label className="label">Availability</label>
             <input
               type="text"
+              
               className="input w-full"
               name="availability"
               placeholder="Availability"
