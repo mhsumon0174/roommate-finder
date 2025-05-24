@@ -80,42 +80,48 @@ const [count, setCount] = useState(roommate.like || 0);
                 {roommate.title}
               </h4>
               <p className="text-base md:text-lg font-semibold text-blue-900">
-                Description:{" "}
+                Description:
                 <span className="text-sm md:text-base text-gray-700">
                   {roommate.description}
                 </span>
               </p>
 
               <p className="text-base md:text-lg font-semibold text-blue-900">
-                Rent Limit:{" "}
+                Rent Limit:
                 <span className="text-sm md:text-base text-gray-700">
                   {roommate.amount}
                 </span>
               </p>
 
               <p className="text-base md:text-lg font-semibold text-blue-900">
-                Personal Info:{" "}
+               Contact Info:
                 <span className="text-sm md:text-base text-gray-700">
                   {roommate.contact}
                 </span>
               </p>
               <p className="text-base md:text-lg font-semibold text-blue-900">
-                LifeStyle:{" "}
+                LifeStyle:
                 <span className="text-sm md:text-base text-gray-700">
                   {roommate.lifeStyle_Preferences}
                 </span>
               </p>
 
               <p className="text-base md:text-lg font-semibold text-blue-900">
-                Location:{" "}
+                Location:
                 <span className="text-sm md:text-base text-gray-700">
                   {roommate.location}
                 </span>
               </p>
               <p className="text-base md:text-lg font-semibold text-blue-900">
-                Room Type:{" "}
+                Room Type:
                 <span className="text-sm md:text-base text-gray-700">
                   {roommate.roomType}
+                </span>
+              </p>
+              <p className="text-base md:text-lg font-semibold text-blue-900">
+                Availability:
+                <span className="text-sm md:text-base text-gray-700">
+                  {roommate.availability}
                 </span>
               </p>
 
