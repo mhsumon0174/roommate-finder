@@ -95,7 +95,7 @@ const email=e.target.email.value;
                     <button className="btn btn-neutral " onClick={handleGoogleSignIn}><FcGoogle></FcGoogle> Sign In With Google</button>
 
         </form>
-        <p>New to this site? Click here to <Link className='text-blue-200 underline' to='/signup'>SignUp</Link></p>
+        <p>New to this site? Click here to <Link className='text-blue-900 underline' to='/signup'>SignUp</Link></p>
       </div>
     </div>
         </div>
