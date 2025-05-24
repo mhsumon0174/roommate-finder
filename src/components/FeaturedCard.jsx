@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 const FeaturedCard = ({ single }) => {
   const handleSeeMore = (_id) => {
-    console.log(_id);
+    window.scrollTo(0, 0);
   };
 
   return (

@@ -64,7 +64,7 @@ const MyPost = ({ single,myPost,setMyPost }) => {
           </button>
         </Link>
         <Link to={`/roommateedit/${single._id}`}>
-          <button className="btn btn-sm btn-outline btn-info ">
+          <button onClick={window.scrollTo(0, 0)} className="btn btn-sm btn-outline btn-info ">
             <FiEdit />
           </button>
         </Link>

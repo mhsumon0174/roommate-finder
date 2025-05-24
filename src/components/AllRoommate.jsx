@@ -9,7 +9,7 @@ const AllRoommate = ({ single }) => {
 
 
   const handleSeeMore = (_id) => {
-    console.log(_id);
+    window.scrollTo(0, 0);
   };
 
   return (

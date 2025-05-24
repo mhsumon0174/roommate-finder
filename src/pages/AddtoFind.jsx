@@ -1,9 +1,11 @@
 import React, { use } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../contexts/AuthContext";
+import { useNavigate } from "react-router";
 
 const AddtoFind = () => {
   const {user}=use(AuthContext)
+  const navigate=useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -27,6 +29,7 @@ const AddtoFind = () => {
             draggable: true,
             timer:1400
           });
+navigate('/browselisting');
         }
         
       });
@@ -168,7 +171,7 @@ const AddtoFind = () => {
           </fieldset>
         </div>
         <div className="my-10">
-          <button className="btn w-full btn-primary text-xl">Add Data</button>
+          <button onClick={window.scrollTo(0, 0)} className="btn w-full btn-primary text-xl">Add Data</button>
         </div>
       </form>
     </div>
