@@ -1,4 +1,4 @@
-# My Roomie
+# My Roomie -Roommate Discovery & Matching Platform
 
 A modern web application to help users find and connect with potential roommates easily.
 
